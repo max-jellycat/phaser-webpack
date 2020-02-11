@@ -1,0 +1,11 @@
+{
+  "name": "dungeon-clicker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:max-jellycat/dungeon-clicker.git",
+  "author": "max-jellycat <max@jellycat.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "phaser": "^3.22.0"
+  }
+}
