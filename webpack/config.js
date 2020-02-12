@@ -9,7 +9,7 @@ const dirNode = path.join(__dirname, '../node_modules')
 const dirApp = path.join(__dirname, '../src')
 const dirAssets = path.join(__dirname, '../src/assets')
 
-const appHtmlTitle = 'Dungeon Clicker'
+const appHtmlTitle = 'Phaser Webpack Template'
 
 /**
  * Webpack Configuration
