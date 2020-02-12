@@ -10,6 +10,7 @@ body {
 }
 
 canvas {
- margin: auto;
- display: block;
+  margin: auto;
+  width: 100vw;
+  display: block;
 }
