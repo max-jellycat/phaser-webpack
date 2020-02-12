@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack/config.dev.js",
     "build": "webpack --progress --mode production --config webpack/config.build.js",
+    "clean": "rm -rf node_modules",
     "lint": "eslint ./src/**/*.js"
   },
   "dependencies": {

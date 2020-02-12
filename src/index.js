@@ -1,12 +1,13 @@
 import 'phaser';
+import './assets/css/style.css'
 
-import config from './config/config'
-import Play from './scenes/play';
+import Play from './scenes/Play';
 
-
-
-new Phaser.Game({
-  width: config.WIDTH,
-  height: config.HEIGHT,
+const config = {
+  type: Phaser.AUTO,
+  width: 640,
+  height: 320,
   scene: Play
-});
+}
+
+new Phaser.Game(config);
