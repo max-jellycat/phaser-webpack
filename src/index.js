@@ -1,11 +1,12 @@
 import 'phaser';
 
+import config from './config/config'
 import Play from './scenes/play';
 
-const gameConfig = {
-  width: 680,
-  height: 400,
-  scene: Play
-};
 
-new Phaser.Game(gameConfig);
+
+new Phaser.Game({
+  width: config.WIDTH,
+  height: config.HEIGHT,
+  scene: Play
+});
