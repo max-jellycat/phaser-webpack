@@ -2,16 +2,13 @@ import Player from '../assets/images/sprites/player.png';
 
 class Play extends Phaser.Scene {
   init() {
-    this.gameWidth = this.sys.game.canvas.width;
-    this.gameHeight = this.sys.game.canvas.height;
+    this.gameW = this.sys.game.canvas.width;
+    this.gameH = this.sys.game.canvas.height;
     this.tileSize = 32;
   }
 
   preload() {
     this.load.image('player', Player);
-    this.gameW = this.sys.game.canvas.width;
-    this.gameH = this.sys.game.canvas.height;
-    this.tileSize = 32;
   }
 
   create() {
