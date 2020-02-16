@@ -9,7 +9,7 @@ const config = {
   height: 512,
   parent: document.querySelector('#container'),
   pixelArt: true,
-  scene: Play
+  scene: Play,
 };
 
 new Phaser.Game(config);

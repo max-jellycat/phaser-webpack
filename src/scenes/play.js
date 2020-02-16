@@ -26,7 +26,7 @@ class Play extends Phaser.Scene {
   createText(x, y, value) {
     const text = this.add
       .text(x, y, value, {
-        fontFamily: 'PixelFont'
+        fontFamily: 'PixelFont',
       })
       .setOrigin(0.5, 0);
     return text;
