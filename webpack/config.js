@@ -1,15 +1,15 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Is the current build a development build
-const IS_DEV = (process.env.NODE_ENV === 'dev')
+const IS_DEV = process.env.NODE_ENV === 'dev';
 
-const dirNode = path.join(__dirname, '../node_modules')
-const dirApp = path.join(__dirname, '../src')
-const dirAssets = path.join(__dirname, '../src/assets')
+const dirNode = path.join(__dirname, '../node_modules');
+const dirApp = path.join(__dirname, '../src');
+const dirAssets = path.join(__dirname, '../src/assets');
 
-const appHtmlTitle = 'Phaser Webpack Template'
+const appHtmlTitle = 'Phaser Webpack Template';
 
 /**
  * Webpack Configuration
@@ -20,17 +20,13 @@ module.exports = {
     vendor: ['phaser']
   },
   resolve: {
-    modules: [
-      dirNode,
-      dirApp,
-      dirAssets
-    ]
+    modules: [dirNode, dirApp, dirAssets]
   },
   plugins: [
     new webpack.DefinePlugin({
       IS_DEV: IS_DEV,
-      'CANVAS_RENDERER': JSON.stringify(true),
-      'WEBGL_RENDERER': JSON.stringify(true)
+      CANVAS_RENDERER: JSON.stringify(true),
+      WEBGL_RENDERER: JSON.stringify(true)
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -48,6 +44,15 @@ module.exports = {
         exclude: dirNode,
         options: {
           compact: true
+        }
+      },
+      // ESLINT
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          // eslint options (if necessary)
         }
       },
       // STYLES
@@ -98,7 +103,7 @@ module.exports = {
       },
       // RAW
       {
-        test: [ /\.vert$/, /\.frag$/ ],
+        test: [/\.vert$/, /\.frag$/],
         use: 'raw-loader'
       }
     ]
@@ -109,4 +114,4 @@ module.exports = {
       chunks: 'all'
     }
   }
-}
+};
