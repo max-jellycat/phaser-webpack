@@ -1,12 +1,15 @@
 import 'phaser';
+import './assets/css/style.css';
 
-import config from './config/config'
-import Play from './scenes/play';
+import Play from './scenes/Play';
 
-
-
-new Phaser.Game({
-  width: config.WIDTH,
-  height: config.HEIGHT,
+const config = {
+  type: Phaser.CANVAS,
+  width: 512,
+  height: 512,
+  parent: document.querySelector('#container'),
+  pixelArt: true,
   scene: Play
-});
+};
+
+new Phaser.Game(config);

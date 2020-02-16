@@ -53,7 +53,7 @@ module.exports = {
       // STYLES
       {
         test: /\.css$/,
-        include: dirAssets,
+        include: `${dirAssets}/css`,
         exclude: dirNode,
         use: [
           'style-loader',
@@ -68,7 +68,7 @@ module.exports = {
       // CSS / SASS
       {
         test: /\.scss/,
-        include: dirAssets,
+        include: `${dirAssets}/scss`,
         exclude: dirNode,
         use: [
           'style-loader',
@@ -88,7 +88,7 @@ module.exports = {
       },
       // IMAGES
       {
-        test: /\.(jpe?g|png|gif)$/,
+        test: /\.(jpe?g|png|gif|ttf)$/,
         loader: 'file-loader',
         include: dirAssets,
         exclude: dirNode,

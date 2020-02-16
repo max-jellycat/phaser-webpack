@@ -1,21 +1,32 @@
-import config from '../config/config'
-
-import Skeleton from '../assets/images/sprites/skeleton.png'
-import DirtBG from '../assets/images/backgrounds/dirt-bg.png'
+import Player from '../assets/images/sprites/player.png'
 
 class Play extends Phaser.Scene {
   preload() {
-    this.load.image('skeleton', Skeleton)
+    this.load.image('player', Player)
+    this.gameW = this.sys.game.canvas.width;
+    this.gameH = this.sys.game.canvas.height;
+    this.tileSize = 32
   }
 
   create() {
-    const skeletonSprite = this.add.sprite(config.WIDTH / 2, config.HEIGHT / 2, 'skeleton');
-    skeletonSprite.setOrigin(0.5);
-    const title = this.add.text(config.WIDTH/ 2, config.HEIGHT / 2, 'Adventure Awaits!');
-    title.setOrigin(0.5)
+    this.player = this.add
+      .sprite(this.gameW / 2, this.gameH / 2 - 64, 'player')
+      .setOrigin(0.5)
+    
+    this.player.scale = 2
+
+    this.createText(this.gameW / 2, this.gameH / 2 , 'Adventure awaits!')
+  }
+  
+  render() {
   }
 
-  render() {
+  createText(x, y, value) {
+    const text = this.add.text(x, y, value, {
+      fontFamily: 'PixelFont',
+    })
+      .setOrigin(0.5, 0);
+    return text;
   }
 }
 
